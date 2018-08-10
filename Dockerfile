@@ -1,6 +1,6 @@
 FROM rocker/tidyverse:latest
 
-# This is a base package for dmenne/breathtestshiny
+# This is the base package for dmenne/breathtestshiny
 
 MAINTAINER Dieter Menne "dieter.menne@menne-biomed.de"
 
@@ -20,9 +20,6 @@ RUN apt-get update && apt-get install -y  \
   
 RUN install2.r --error \
     PKI \
-    tidyverse \
-    dplyr \
-#    ggplot2 \ 
     devtools  \
     formatR \ 
     remotes \ 
