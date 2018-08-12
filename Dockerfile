@@ -40,9 +40,11 @@ RUN install2.r --error \
     xts \
     rsconnect \
     BH \
-    readr \
-    haven \
-    rstan
+    haven 
+
+RUN install2.r --error  readr
+    
+RUN install2.r --error rstan
 
 # set host and port
 COPY Rprofile.site /usr/lib/R/etc/
