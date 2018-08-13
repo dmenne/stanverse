@@ -14,6 +14,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
  libssl-dev 
 
 RUN install2.r --error \
+    devtools \
     tidyverse \ 
     PKI \
     caTools \
