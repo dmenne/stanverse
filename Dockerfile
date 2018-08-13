@@ -4,6 +4,14 @@ FROM rocker/shiny:latest
 
 MAINTAINER Dieter Menne "dieter.menne@menne-biomed.de"
 
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+ libxml2-dev \ 
+ libsqlite-dev \ 
+ libmariadbd-dev \ 
+ libmariadb-client-lgpl-dev \ 
+ libpq-dev \
+ libssh2-1-dev 
+
 RUN install2.r --error \
     tidyverse \ 
     PKI \
