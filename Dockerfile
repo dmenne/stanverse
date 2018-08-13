@@ -10,7 +10,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
  libmariadbd-dev \ 
  libmariadb-client-lgpl-dev \ 
  libpq-dev \
- libssh2-1-dev 
+ libssh2-1-dev \
+ libssl-dev 
 
 RUN install2.r --error \
     tidyverse \ 
@@ -29,11 +30,8 @@ RUN install2.r --error \
     colourpicker \
     xts \
     rsconnect \
-    BH \
-    haven 
+    BH 
 
-RUN install2.r --error  readr
-    
 RUN install2.r --error rstan
 
 
