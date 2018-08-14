@@ -11,7 +11,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
  libmariadb-client-lgpl-dev \ 
  libpq-dev \
  libssh2-1-dev \
- libssl-dev 
+ libssl-dev  \
+ libv8-3.14 # for V8
 
 RUN install2.r --error \
     devtools \
@@ -31,9 +32,9 @@ RUN install2.r --error \
     colourpicker \
     xts \
     rsconnect \
+    V8 \
     BH 
 
 RUN install2.r --error rstan
-
 
 EXPOSE 3838
