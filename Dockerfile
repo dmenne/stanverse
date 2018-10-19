@@ -35,6 +35,11 @@ RUN install2.r --error \
     V8 \
     BH 
 
-RUN install2.r --error rstan
+RUN install2.r --error \
+   rstan \
+   shinystan \
+   testthat \
+   covr \
+   breathtestcore
 
 EXPOSE 3838
