@@ -37,6 +37,7 @@ RUN install2.r --error \
 
 RUN install2.r --error \
    rstan \
+   rstantools \
    shinystan \
    testthat \
    covr \
