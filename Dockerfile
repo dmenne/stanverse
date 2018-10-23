@@ -40,7 +40,7 @@ RUN install2.r --error \
    rstantools \
    shinystan \
    testthat \
-   covr \
-   breathtestcore
+   brms \
+   covr 
 
 EXPOSE 3838
