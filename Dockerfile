@@ -35,6 +35,12 @@ RUN install2.r --error \
     V8 \
     BH 
 
+# For gitlab    
+RUN install2.r --error \
+    ggfittext\
+    signal \
+    multcomp 
+
 RUN install2.r --error \
    rstan \
    rstantools \
