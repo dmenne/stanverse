@@ -1,52 +1,24 @@
-FROM rocker/shiny:latest
+FROM dmenne/stanversebase:latest
 
 # This is the base package for dmenne/breathtestshiny
+#
+# The dependency from dmenne/stanversebase was used
+# to allow the packages to be built on Docker Hub
+# To build on your own system, combining the three 
+# Dockerfiles stanversebase, stanverse and breathtestshiny
+# should be fine
 
-MAINTAINER Dieter Menne "dieter.menne@menne-biomed.de"
+LABEL maintainer="dieter.menne@menne-biomed.de"
 
-RUN apt-get update -qq && apt-get -y --no-install-recommends install \
- libxml2-dev \ 
- libsqlite-dev \ 
- libmariadbd-dev \ 
- libmariadb-client-lgpl-dev \ 
- libpq-dev \
- libssh2-1-dev \
- libssl-dev  \
- libv8-3.14 # for V8
 
-RUN install2.r --error \
-    devtools \
-    tidyverse \ 
-    PKI \
-    caTools \
-    DT \
-    dygraphs \
-    gtools \ 
-    shiny  \
-    shinyjs \ 
-    shinythemes \ 
-    shinyBS \ 
-    shinyAce \
-    shinycssloaders \
-    bayesplot \
-    colourpicker \
-    xts \
-    rsconnect \
-    V8 \
-    BH 
-
-# For gitlab    
-RUN install2.r --error \
-    ggfittext\
-    signal \
-    multcomp 
+RUN install2.r --error --deps  --ncpus 2 \
+   rstan 
 
 RUN install2.r --error \
-   rstan \
+   bayesplot \
    rstantools \
    shinystan \
    testthat \
-   brms \
    covr 
 
 EXPOSE 3838
