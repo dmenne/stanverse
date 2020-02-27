@@ -11,7 +11,7 @@ FROM dmenne/stanversebase:latest
 LABEL maintainer="dieter.menne@menne-biomed.de"
 
 
-RUN install2.r --error --deps  --ncpus 2 \
+RUN install2.r --error --deps \
    rstan 
 
 RUN install2.r --error \
